@@ -1,34 +1,19 @@
     async function getPhotographers() {
-        // Penser à remplacer par les données récupérées dans le json
-        const photographers = [
-            {
-                "name": "Ma data test",
-                "id": 1,
-                "city": "Paris",
-                "country": "France",
-                "tagline": "Ceci est ma data test",
-                "price": 400,
-                "portrait": "account.png"
-            },
-            {
-                "name": "Autre data test",
-                "id": 2,
-                "city": "Londres",
-                "country": "UK",
-                "tagline": "Ceci est ma data test 2",
-                "price": 500,
-                "portrait": "account.png"
-            },
-        ]
-        // et bien retourner le tableau photographers seulement une fois
+        // call fichier json for data with fetch
+        const data = await fetch('/data/photographers.json');
+        const return_data = await data.json();
+        console.log(return_data)
+        const photographers = return_data.photographers;  
+        
+        // return array data
         return ({
-            photographers: [...photographers, ...photographers, ...photographers]})
+            return_data: [...photographers]})
     }
 
-    async function displayData(photographers) {
+    async function displayData(return_data) {
         const photographersSection = document.querySelector(".photographer_section");
 
-        photographers.forEach((photographer) => {
+        return_data.forEach((photographer) => {
             const photographerModel = photographerFactory(photographer);
             const userCardDOM = photographerModel.getUserCardDOM();
             photographersSection.appendChild(userCardDOM);
@@ -37,8 +22,8 @@
 
     async function init() {
         // Récupère les datas des photographes
-        const { photographers } = await getPhotographers();
-        displayData(photographers);
+        const { return_data } = await getPhotographers();
+        displayData(return_data);
     };
     
     init();
