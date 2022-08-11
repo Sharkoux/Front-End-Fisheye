@@ -3,7 +3,7 @@
 body {
     font-family: "DM Sans", sans-serif;
     margin: 0;
-    box-sizing:content-box;
+    box-sizing: content-box;
 }
 
 a {
@@ -79,9 +79,7 @@ h1 {
     opacity: 0.6;
 }
 
-.photographer_section article div {
 
-}
 
 /* sr-only for information link  */
 .sr-only {
