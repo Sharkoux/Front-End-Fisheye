@@ -3,24 +3,37 @@
   <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
+    <!--Import icon and fonts-->
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5a8a8c5fcf.js" crossorigin="anonymous"></script>
     <title>Fisheye - photographe </title>
   </head>
   <body>
+    <!--Header-->
     <header>
       <a href="index.html" aria-label="Retour à la page d'accueil">
       <img src="assets/images/logo.png" class="logo"  alt="Fisheye Home page" />
       </a>
     </header>
+    <!--Main-->
     <main id="main">
+      <!--Zone presentation photographe and button modal-->
       <div class="photograph-header">
         <button class="contact_button" onclick="displayModal()" aria-label="Contact Me">Contactez-moi</button>
       </div>
+      <!--Tri-->
+      <div class="sort">
+        <p>Trier par</p>
+      </div>
+      <!--Presentation image-->
+      <div class="body">
       <div class="photograph-card">
         
       </div>
+    </div>
     </main>
+    <!--Modal-->
     <div id="contact_modal">
 			<div class="modal">
 				<header>
@@ -36,7 +49,7 @@
 				</form>
 			</div>
 		</div>
-    
+    <!--Import script js-->
     <script src="/scripts/pages/photographer.js"></script>
     <script src="/scripts/factories/photographer.js"></script>
     <script src="/scripts/utils/contactForm.js"></script>

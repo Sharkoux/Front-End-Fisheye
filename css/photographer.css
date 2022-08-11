@@ -1,6 +1,9 @@
+
+
 #contact_modal {
     display: none;
 }
+/* rules for photograph header */
 
 .photograph-header {
     display: flex;
@@ -29,8 +32,60 @@
 
 .photograph-header h1 {
     color: #D3573C;
-    font-size: 45px;
+    font-size: 64px;
+    font-weight: 400;
 }
+
+.photograph-header h2 {
+    color: #901C1C;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+/* rules for card zone */
+
+.body {
+    margin: 0 100px;
+}
+
+.photograph-card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.photograph-card div {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.photograph-card div img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.photograph-card p {
+    font-size: 24px;
+    font-weight: 400;
+    color: #901C1C;
+    margin-top: 10px;
+}
+
+.photograph-card i {
+
+}
+
+/* zone sort */
+.sort {
+    margin: 0 100px;
+    font-size: 18px;
+    font-weight: 700;
+}
+/* rules modal */
 
 .contact_button {
     

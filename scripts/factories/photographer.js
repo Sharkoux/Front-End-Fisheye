@@ -1,8 +1,12 @@
+
+
+/* function factory photographe */
 function photographerFactory(data) {
+    /* call const */
     const { name, portrait, id, city, country, tagline, price } = data;
 
     const picture = `assets/photographers/${portrait}`;
-
+    /* function create all element DOM for article photographer-section */
     function getUserCardDOM() {
         const article = document.createElement( 'article' );
         const link = document.createElement('a');
@@ -33,14 +37,14 @@ function photographerFactory(data) {
         article.appendChild(p3);
         return (article);
     }
-
+    /* function générate all element DOM for article photographer-header */
     function getUserPersonnalDom() {
         const span = document.createElement('span');
         const div = document.createElement('div');
         span.appendChild(div);
         const first_name = document.createElement('h1');
         first_name.textContent = name;
-        const position = document.createElement('p');
+        const position = document.createElement('h2');
         position.textContent = city + ", " + country;
         const citation = document.createElement('p');
         citation.textContent = tagline;

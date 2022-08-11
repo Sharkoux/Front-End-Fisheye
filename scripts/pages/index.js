@@ -1,4 +1,6 @@
-    async function getPhotographers() {
+   
+   /* Function call data json fetch */
+   async function getPhotographers() {
         // call fichier json for data with fetch
         const data = await fetch('/data/photographers.json');
         const return_data = await data.json();
@@ -10,6 +12,7 @@
             return_data: [...photographers]})
     }
 
+    /* Function add element DOM in photographe_section */
     async function displayData(return_data) {
         const photographersSection = document.querySelector(".photographer_section");
 
@@ -19,7 +22,7 @@
             photographersSection.appendChild(userCardDOM);
         });
     };
-
+    /* function init */
     async function init() {
         // Récupère les datas des photographes
         const { return_data } = await getPhotographers();
