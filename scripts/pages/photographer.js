@@ -32,7 +32,7 @@ async function displayData2(return_data2) {
 
     return_data2.forEach((media) => {
         if (media.photographerId == url_id) {
-        console.log(media.image)
+        console.log(media.video)
         const photographerMedia = MediaFactory(media);
         const userCardDOM = photographerMedia.getMediaPersonnel();
         MediaSection.appendChild(userCardDOM);
