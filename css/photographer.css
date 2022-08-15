@@ -55,18 +55,19 @@
     justify-content: space-between;
 }
 
-.photograph-card div {
+.photograph-card a {
     display: flex;
     flex-direction: column;
 
 }
 
-.photograph-card div img,
-.photograph-card div video {
+.photograph-card a img,
+.photograph-card a video {
     width: 350px;
     height: 350px;
     object-fit: cover;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 
@@ -211,4 +212,13 @@ form input {
     font-size: 24px;
     display: flex;
     justify-content: space-around;
+}
+
+/* lightbox */ 
+
+.lightbox {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
 }

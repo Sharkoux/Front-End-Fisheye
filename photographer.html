@@ -65,16 +65,27 @@
       </form>
     </div>
   </div>
+  <!--Lightbox-->
+  <div class="lightbox">
+    <img src="assets/icons/close.svg" onclick="closeModal()" alt="sortir du modal" />
+    <div class="img">
+      <img class="img_lightbox">
+      <p class="img_name"></p>
+    </div>
+    <i class="fa-solid fa-chevron-right"></i>
+    <i class="fa-solid fa-chevron-left"></i>
+  </div>
+
   <!--price and like-->
   <div class="insert">
     <p>296081 <i class="fa-solid fa-heart"></i></p>
   </div>
   <!--Import script js-->
   <script src="/scripts/pages/photographer.js"></script>
-  <script src="/scripts/factories/photographer.js"></script>
   <script src="/scripts/utils/contactForm.js"></script>
+  <script src="/scripts/factories/photographer.js"></script>
   <script src="/scripts/factories/media.js"></script>
-
+  <script src="/scripts/utils/lightbox.js"></script>
 </body>
 
 </html>

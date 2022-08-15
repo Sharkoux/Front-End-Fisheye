@@ -28,8 +28,10 @@
         const { return_data } = await getPhotographers();
         displayData(return_data);
         
+
     };
     
+ 
     init();
     
 

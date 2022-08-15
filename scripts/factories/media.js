@@ -10,7 +10,8 @@ function MediaFactory(data) {
     /* function generate all DOM element for photograph-card zone */
     function getMediaPersonnel() {
 
-        const card_body = document.createElement('div');
+        const card_body = document.createElement('a');
+        card_body.setAttribute("class", "link_img")
         const card_title = document.createElement('p');
         card_title.textContent = title;
 

@@ -16,6 +16,8 @@ async function getPhotographers() {
         return_data: [...photographers]})
 }
 
+
+
 async function getMedia() {
     // call fichier json for data with fetch
     const data = await fetch('/data/photographers.json');
@@ -64,6 +66,7 @@ async function init() {
     displayData(return_data);
     const { return_data2 } = await getMedia();
     displayData2(return_data2);
+    ligthbox();
 };
 
 init();
