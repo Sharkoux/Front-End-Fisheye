@@ -8,26 +8,26 @@ function photographerFactory(data) {
     const picture = `assets/photographers/${portrait}`;
     /* function create all element DOM for article photographer-section */
     function getUserCardDOM() {
-        const article = document.createElement( 'article' );
+        const article = document.createElement('article');
         const link = document.createElement('a');
         link.setAttribute("href", `../photographer.html?${id}`);
         link.setAttribute("aria-label", "Direction la page de la photographe " + name + "(nouvelle fenetre)");
 
         const div_image = document.createElement('div');
 
-        const img = document.createElement( 'img' );
+        const img = document.createElement('img');
         img.setAttribute("src", picture);
         img.setAttribute("alt", "Photo de profil de " + name);
-        
-        const h2 = document.createElement( 'h2' );
+
+        const h2 = document.createElement('h2');
         h2.textContent = name;
-        const p1 = document.createElement( 'h3' );
+        const p1 = document.createElement('h3');
         p1.textContent = city + ", " + country;
-        const p2 = document.createElement( 'h4' );
+        const p2 = document.createElement('h4');
         p2.textContent = tagline;
-        const p3 = document.createElement( 'p' );
+        const p3 = document.createElement('p');
         p3.textContent = price + "€/jour";
-        
+
         article.appendChild(link);
         link.appendChild(div_image);
         div_image.appendChild(img);
@@ -48,7 +48,7 @@ function photographerFactory(data) {
         position.textContent = city + ", " + country;
         const citation = document.createElement('p');
         citation.textContent = tagline;
-        const img = document.createElement( 'img' );
+        const img = document.createElement('img');
         img.setAttribute("src", picture);
         img.setAttribute("alt", "Photo de profil de " + name);
         div.appendChild(first_name);
@@ -56,9 +56,9 @@ function photographerFactory(data) {
         div.appendChild(citation);
         span.appendChild(img);
 
-        
-        return(span);
-        
+
+        return (span);
+
     }
 
     return { name, picture, portrait, id, city, country, tagline, price, getUserCardDOM, getUserPersonnalDom }

@@ -42,13 +42,18 @@ async function displayData2(return_data2) {
 
 async function displayData(return_data) {
     const photographersSection = document.querySelector(".photograph-header");
-
+    const insert = document.querySelector(".insert");
+    const modal_name = document.querySelector(".modal_name");
     return_data.forEach((photographer) => {
         if (photographer.id == url_id) {
         console.log(photographer)
         const photographerModel = photographerFactory(photographer);
         const userCardDOM = photographerModel.getUserPersonnalDom();
         photographersSection.appendChild(userCardDOM);
+        const price = document.createElement('p');
+        price.textContent = photographer.price + "€ / jour";
+        modal_name.textContent = photographer.name
+        insert.appendChild(price)
         }
     });
 };
