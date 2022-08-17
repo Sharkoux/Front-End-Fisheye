@@ -29,15 +29,15 @@
       <p>Trier par</p>
     </div>
     <!--Presentation image-->
-    <div class="body">
-      <div class="photograph-card">
+    <div class="body" aria-label="Zone présentation picture of photograph">
+      <div class="photograph-card" aria-label="Card containing photo and title of the photographer">
 
       </div>
     </div>
-    
-    
+
+
   </main>
-  
+
   <!--Modal-->
   <div id="contact_modal" aria-hidden="true" role="dialog" aria-describedby="modal for contact photograph">
     <div class="modal">
@@ -59,17 +59,18 @@
           <span class="error" aria-label="Message d'erreur: Veuillez entrer une adresse mail valide."></span>
           <label for="message">Votre message</label>
           <input id="message" type="text" name="message" />
-          <span class="error" aria-label="Message d'erreur: Veuillez entrer un message comprenant entre 2 et 150 caractères. "></span>
+          <span class="error"
+            aria-label="Message d'erreur: Veuillez entrer un message comprenant entre 2 et 150 caractères. "></span>
         </div>
         <button class="contact_button submit">Envoyer</button>
       </form>
     </div>
   </div>
   <!--Lightbox-->
-  <div class="lightbox">
+  <div class="lightbox" role="dialog" aria-describedby="Lightbox slide picture">
     <img class="lightbox_close" src="assets/icons/close.svg" onclick="closeLightbox()" alt="sortir du modal" />
     <div class="img">
-      
+
     </div>
     <button class="left"><i class="fa-solid fa-chevron-left"></i></button>
     <button class="rigth"><i class="fa-solid fa-chevron-right"></i></button>

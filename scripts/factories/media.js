@@ -11,7 +11,8 @@ function MediaFactory(data) {
     function getMediaPersonnel() {
 
         const card_body = document.createElement('a');
-        card_body.setAttribute("class", "link_img")
+        card_body.setAttribute("class", "link_img");
+        card_body.setAttribute("tabindex", "0");
         const card_title = document.createElement('p');
         card_title.textContent = title;
 
@@ -27,7 +28,7 @@ function MediaFactory(data) {
             img.autoplay = false;
             img.controls = true;
             img.src = video_mp4;
-
+            img.setAttribute('tabindex', '1');  
         }
 
         card_body.appendChild(img);
