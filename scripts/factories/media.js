@@ -13,8 +13,13 @@ function MediaFactory(data) {
         const card_body = document.createElement('a');
         card_body.setAttribute("class", "link_img");
         card_body.setAttribute("tabindex", "0");
+        
         const card_title = document.createElement('p');
         card_title.textContent = title;
+
+        const Nbr_Like = document.createElement('span');
+        Nbr_Like.textContent = likes;
+        
 
         const like = document.createElement('i');
         like.setAttribute("class", "fa-solid fa-heart");
@@ -33,6 +38,7 @@ function MediaFactory(data) {
 
         card_body.appendChild(img);
         card_body.appendChild(card_title);
+        card_body.appendChild(Nbr_Like);
         card_body.appendChild(like);
 
         return (card_body);

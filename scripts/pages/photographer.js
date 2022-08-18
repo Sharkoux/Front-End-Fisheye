@@ -32,13 +32,15 @@ async function getMedia() {
 
 async function displayData2(return_data2) {
     const MediaSection = document.querySelector(".photograph-card");
-
+    
     return_data2.forEach((media) => {
         if (media.photographerId == url_id) {
         const photographerMedia = MediaFactory(media);
         const userCardDOM = photographerMedia.getMediaPersonnel();
         MediaSection.appendChild(userCardDOM);
-        }
+        
+       
+    }
     });
 };
 
@@ -53,7 +55,7 @@ async function displayData(return_data) {
         photographersSection.appendChild(userCardDOM);
         const price = document.createElement('p');
         price.textContent = photographer.price + "€ / jour";
-        modal_name.textContent = photographer.name
+        modal_name.textContent = photographer.name;
         insert.appendChild(price)
         }
     });
