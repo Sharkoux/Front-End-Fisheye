@@ -12,11 +12,19 @@ let img_lightbox = document.createElement('img');
     let lightSubmit = document.querySelectorAll('.link_img');
     let length = lightSubmit.length - 1;
     let p = document.createElement('p');
-
     
-    //onclick lightbox visible
+
+      //onclick lightbox visible
     lightSubmit.forEach(function (i) {
-        i.addEventListener('click', function toto() {
+        i.addEventListener('click', OpenLightbox, false);
+        i.addEventListener('keydown', (e) => {
+            const keyCode = e.keyCode ? e.keyCode : e.which;
+            if ( keyCode === 13) {
+               OpenLightbox()
+            }
+        });
+        
+        function OpenLightbox() {
             
             console.log(i.childNodes[1].textContent)
             lightbox_display.style.display = "block";
@@ -162,15 +170,15 @@ let img_lightbox = document.createElement('img');
                     Left();
                 }
             })
-            i.addEventListener('keydown', (e) => {
-                const keyCode = e.keyCode ? e.keyCode : e.which;
-                if ( keyCode === 13) {
-                   toto()
-                }
-            })
-        });
-       
+    }
     });
+    
+    
+   
+
+     
+
+
 
     /* function close to ESC */
     document.addEventListener('keydown', e => {
@@ -180,9 +188,10 @@ let img_lightbox = document.createElement('img');
             closeLightbox()
         }
     })
-
-
+     
 }
+
+
 async function closeLightbox() {
     lightbox_display.style.display = "none";
     main.setAttribute('aria-hidden', 'false');
