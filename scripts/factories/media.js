@@ -10,6 +10,8 @@ function MediaFactory(data) {
     /* function generate all DOM element for photograph-card zone */
     function getMediaPersonnel() {
 
+        const div_one = document.createElement('div');
+        div_one.setAttribute("class", "div_card_body");
         const card_body = document.createElement('a');
         card_body.setAttribute("class", "link_img");
         card_body.setAttribute("tabindex", "0");
@@ -18,11 +20,14 @@ function MediaFactory(data) {
         card_title.textContent = title;
 
         const Nbr_Like = document.createElement('span');
+        Nbr_Like.setAttribute("class", "span_price");
         Nbr_Like.textContent = likes;
-        
+        //console.log(likes)
 
         const like = document.createElement('i');
-        like.setAttribute("class", "fa-solid fa-heart");
+        like.setAttribute("class", "fa-solid fa-heart like_0");
+
+
 
         var img = document.createElement('img');
         img.setAttribute("src", picture);
@@ -35,13 +40,13 @@ function MediaFactory(data) {
             img.src = video_mp4;
             img.setAttribute('tabindex', '1');  
         }
-
+        div_one.appendChild(card_body);
         card_body.appendChild(img);
-        card_body.appendChild(card_title);
-        card_body.appendChild(Nbr_Like);
-        card_body.appendChild(like);
+        div_one.appendChild(card_title);
+        div_one.appendChild(Nbr_Like);
+        div_one.appendChild(like);
 
-        return (card_body);
+        return (div_one);
     }
 
 

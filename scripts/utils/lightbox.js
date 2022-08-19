@@ -26,7 +26,7 @@ let img_lightbox = document.createElement('img');
         
         function OpenLightbox() {
             
-            console.log(i.childNodes[1].textContent)
+            console.log(i.parentNode.childNodes[1].textContent)
             lightbox_display.style.display = "block";
 
             //rule aria
@@ -43,7 +43,7 @@ let img_lightbox = document.createElement('img');
 
 
             img_lightbox.setAttribute("src", i.firstChild.src);
-            p.textContent = i.childNodes[1].textContent;
+            p.textContent = i.parentNode.childNodes[1].textContent;
 
 
 

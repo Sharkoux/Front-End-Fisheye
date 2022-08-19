@@ -71,7 +71,7 @@
     cursor: pointer;
 }
 
-.photograph-card a span {
+.photograph-card span {
     font-size: 24px;
     font-weight: 500;
     color: #901C1C;
@@ -93,11 +93,12 @@
 .photograph-card i {
     width: 20px;
     height: 20px;
-    font-size: larger;
+    font-size: 22px;
     color: #901C1C;
     position: relative;
-    bottom: 70px;
-    left: 330px;
+    bottom: 58px;
+    left: 300px;
+    cursor: pointer;
 }
 
 /* zone sort */
@@ -224,6 +225,22 @@ form input {
     font-size: 24px;
     display: flex;
     justify-content: space-around;
+}
+
+.insert i,
+.insert p {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+}
+
+.nmber_like {
+    margin-left: 20px;
+}
+
+.insert i {
+    margin-right: 100px;
 }
 
 /* lightbox */ 
