@@ -49,6 +49,7 @@ async function AddLike() {
     const Span_like = document.querySelectorAll(".span_price");
     const Nmber_like = document.querySelector(".nmber_like");
     const add_like = document.querySelectorAll(".like_0");
+    var test = ' ';
 
     function alllike() {
     //call all number like and addition   
@@ -70,22 +71,33 @@ async function AddLike() {
     Nmber_like.textContent = sum;
     
     }
+
+    var clicked = false;
     
     add_like.forEach(function (n) {
-        n.addEventListener('click', (e) => {
-        var parent2 = n.parentNode; 
-              
-        parent2.childNodes[2].innerHTML + 1 
-        
-        console.log(parent2.childNodes)
-    
-        
-       
-        alllike();
-        
-    }
+        n.addEventListener('click', NewLike, false);
 
-        )});
+         
+        function NewLike() {
+        
+            var parent2 = n.parentNode; 
+           
+            var like_all = Number(parent2.childNodes[2].innerHTML);
+            console.log(n)
+    
+            if(test == 0 ) {   
+                parent2.childNodes[2].innerHTML = like_all + 1;
+               
+            }
+            
+            n.removeEventListener('click', NewLike)
+            
+    
+           
+            alllike()
+        };
+    });    
+       
     
 
     alllike();
