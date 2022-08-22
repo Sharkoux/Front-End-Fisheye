@@ -49,7 +49,6 @@ async function AddLike() {
     const Span_like = document.querySelectorAll(".span_price");
     const Nmber_like = document.querySelector(".nmber_like");
     const add_like = document.querySelectorAll(".like_0");
-    var test = ' ';
 
     function alllike() {
     //call all number like and addition   
@@ -72,30 +71,36 @@ async function AddLike() {
     
     }
 
-    var clicked = false;
     
+    // for  all heart click 
     add_like.forEach(function (n) {
         n.addEventListener('click', NewLike, false);
+        n.addEventListener('keydown', KeyDown, false);
+        // and keydown (ENTER) 
+        function KeyDown(e) {
+            const keyCode = e.keyCode ? e.keyCode : e.which;
+            if ( keyCode === 13) {
+               NewLike(),
+               false
+            }
+        }
 
-         
+        // Number like + 1
         function NewLike() {
         
             var parent2 = n.parentNode; 
            
             var like_all = Number(parent2.childNodes[2].innerHTML);
             console.log(n)
-    
-            if(test == 0 ) {   
-                parent2.childNodes[2].innerHTML = like_all + 1;
-               
-            }
-            
-            n.removeEventListener('click', NewLike)
-            
-    
-           
+            parent2.childNodes[2].innerHTML = like_all + 1;
+            // Impossible > +1   
+            n.removeEventListener('click', NewLike);
+            n.removeEventListener('keydown', KeyDown, false);
+
             alllike()
+            
         };
+        
     });    
        
     
