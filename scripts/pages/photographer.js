@@ -110,6 +110,40 @@ async function AddLike() {
 
 }
 
+
+//function choice sorting method 
+
+ function SortChoice() {
+
+    //call const
+    const dropbtn = document.querySelector(".drop_btn");
+    const dropdown = document.querySelector(".dropdown_body");
+    const arrowup = document.querySelector(".angle-up");
+    const arrowdown = document.querySelector(".angle-down");
+    const Card = document.querySelectorAll(".div_card_body");
+    const photograph_card = document.querySelector(".photograph-card");
+    const choicePop = document.querySelector(".choicePop");
+    
+    // reveal arrow and menu choice
+    dropdown.style.display = "flex";
+    arrowup.style.setProperty("display", "flex", "important");
+    arrowdown.style.display = "none";
+
+    // if "Popularité" is choice, likes picture for order 
+    choicePop.addEventListener("click", IfPopChoice);
+    async function IfPopChoice() {
+    dropdown.style.display = "none";
+    var order_Pop = [].slice.call(Card).sort(function (a, b) {
+        return a.childNodes[2].innerHTML - b.childNodes[2].innerHTML;
+    });
+
+    order_Pop.forEach(function (Card) {
+        photograph_card.appendChild(Card);
+    });  
+    dropbtn.firstChild.replaceWith("Popularité")
+    }   
+}
+
 async function displayData(return_data) {
     const photographersSection = document.querySelector(".photograph-header");
     const insert = document.querySelector(".insert");
