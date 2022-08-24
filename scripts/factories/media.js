@@ -16,6 +16,10 @@ function MediaFactory(data) {
         card_body.setAttribute("class", "link_img");
         card_body.setAttribute("tabindex", "0");
         
+        const date_ = document.createElement('p');
+        date_.textContent = date;
+        date_.setAttribute("hidden", "true");
+        
         const card_title = document.createElement('p');
         card_title.textContent = title;
 
@@ -42,6 +46,7 @@ function MediaFactory(data) {
         }
         div_one.appendChild(card_body);
         card_body.appendChild(img);
+        div_one.appendChild(date_);
         div_one.appendChild(card_title);
         div_one.appendChild(Nbr_Like);
         div_one.appendChild(like);
