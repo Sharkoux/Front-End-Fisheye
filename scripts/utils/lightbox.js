@@ -201,8 +201,7 @@ let p = document.createElement('p');
                     }
                
              img_lightbox.setAttribute("src", card_body[b].firstChild.firstChild.src)
-             p.textContent =  card_body[b].firstChild.parentElement.childNodes[2].textContent;
-                }
+             p.textContent =  card_body[b].firstChild.parentElement.childNodes[2].textContent;                }
 
             }
            
