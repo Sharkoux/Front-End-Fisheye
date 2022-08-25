@@ -71,9 +71,9 @@ let p = document.createElement('p');
            
             
         
-            //z = index_lightbox;
+            
 
-           
+            // add array for order
                 var array = [lightSubmit[0].getAttribute("data-order")]
                 //console.log(card_body[one].firstChild.firstChild.src.split('.')[4])
                 for(z = 0; z < lightSubmit.length; z++) {
@@ -86,24 +86,20 @@ let p = document.createElement('p');
                 var b = array[a];
                 console.log(a)
                 console.log(b)  
-            // button rigth for slide img
+           
                
             
             
            
-    
+            // button rigth for slide img
             rigth.addEventListener('click', Rigth)
             async function Rigth() {
-                
-               //if(array[0] !== '0'){
-
-              // }
                 
                 if (b < card_body.length - 1) {
                     
                     b++
                     console.log(b)     
-                    
+                    //if img or mp4
                     if (card_body[b].firstChild.firstChild.src.split('.')[4] == 'jpg') {
                         
                         lighbox_img.removeChild(img_lightbox);
@@ -128,6 +124,7 @@ let p = document.createElement('p');
                 }
                 else {
                     b = 0;
+                    //if img or mp4
                     if (card_body[b].firstChild.firstChild.src.split('.')[4] == 'jpg') {
                         console.log("jpg")
                         lighbox_img.removeChild(img_lightbox);
@@ -204,7 +201,7 @@ let p = document.createElement('p');
              p.textContent =  card_body[b].firstChild.parentElement.childNodes[2].textContent;                }
 
             }
-           
+            // rigth or left [KEY]
             document.addEventListener('keydown', e => {
                 const keyCode = e.keyCode ? e.keyCode : e.which;
         
