@@ -15,8 +15,9 @@ function MediaFactory(data) {
         const card_body = document.createElement('a');
         card_body.setAttribute("class", "link_img");
         card_body.setAttribute("tabindex", "0");
+        card_body.setAttribute("alt", `Image: ${title}`)
         
-        const date_ = document.createElement('p');
+        const date_ = document.createElement('em');
         date_.textContent = date;
         date_.setAttribute("hidden", "true");
         
@@ -42,7 +43,7 @@ function MediaFactory(data) {
             img.autoplay = false;
             img.controls = true;
             img.src = video_mp4;
-            img.setAttribute('tabindex', '1');  
+            img.setAttribute('tabindex', '0');  
         }
         div_one.appendChild(card_body);
         card_body.appendChild(img);

@@ -92,9 +92,9 @@ async function AddLike() {
 
             var parent2 = n.parentNode;
 
-            var like_all = Number(parent2.childNodes[2].innerHTML);
+            var like_all = Number(parent2.childNodes[3].innerHTML);
             console.log(n)
-            parent2.childNodes[2].innerHTML = like_all + 1;
+            parent2.childNodes[3].innerHTML = like_all + 1;
             // Impossible > +1   
             n.removeEventListener('click', NewLike);
             n.removeEventListener('keydown', KeyDown, false);
@@ -156,6 +156,8 @@ function SortChoice() {
         dropbtn.firstChild.replaceWith("Popularité");
         arrowup.style.setProperty("display", "none", "important");
         arrowdown.style.display = "flex";
+       
+        
     }
 
     // if "Date" choice, Date for order 
@@ -183,6 +185,9 @@ function SortChoice() {
         dropbtn.firstChild.replaceWith("Date");
         arrowup.style.setProperty("display", "none", "important");
         arrowdown.style.display = "flex";
+        
+        
+    
     }
 
 
@@ -211,6 +216,7 @@ function SortChoice() {
         dropbtn.firstChild.replaceWith("Titre");
         arrowup.style.setProperty("display", "none", "important");
         arrowdown.style.display = "flex";
+        
     }
     
     dropbtn.addEventListener("dblclick",(e) => {
@@ -226,7 +232,6 @@ function SortChoice() {
         }
     })
     
-
 }
 
 async function displayData(return_data) {
@@ -252,6 +257,9 @@ async function init() {
     displayData(return_data);
     const { return_data2 } = await getMedia();
     displayData2(return_data2);
+    
+    const Card = document.querySelectorAll(".div_card_body");
+    
     AddLike();
     ligthbox();
 };

@@ -130,6 +130,7 @@
     margin: 10px;
     flex-direction: column;
     display: none;
+    z-index: 20;
 }
 
 .dropdown_body a {
@@ -297,7 +298,7 @@ form input {
     justify-content: space-around;
 }
 
-.insert i,
+.insert em,
 .insert p {
     align-items: center;
     display: flex;

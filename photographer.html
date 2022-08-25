@@ -11,10 +11,10 @@
   <title>Fisheye - photographe </title>
 </head>
 
-<body>
+<body>  
   <!--Header-->
   <header>
-    <a href="index.html" aria-label="Retour à la page d'accueil">
+    <a href="index.html" aria-label="Retour à la page d'accueil" autofocus>
       <img src="assets/images/logo.png" class="logo" alt="Fisheye Home page" />
     </a>
   </header>
@@ -24,11 +24,10 @@
     <div class="photograph-header">
       <button class="contact_button btn_center" onclick="displayModal()" aria-label="Contact Me">Contactez-moi</button>
     </div>
-    <!--Tri-->
     <div class="sort">
       <p>Trier par</p>
       <div class="dropdown">
-        <button onclick="SortChoice()" class="drop_btn" tabindex="0">Popularité<i class="fa-solid fa-angle-down angle-down"></i> <i class="fa-solid fa-angle-up angle-up"></i> </button>
+        <button onclick="SortChoice()" class="drop_btn" tabindex="0">Popularité<em class="fa-solid fa-angle-down angle-down"></em> <em class="fa-solid fa-angle-up angle-up"></em> </button>
         <div id="Dropdown" class="dropdown_body">
           <a class="choicePop" tabindex="0">Popularité</a>
           <a class="choiceDate" tabindex="0">Date</a>
@@ -51,7 +50,7 @@
     <div class="modal">
       <header>
         <h2>Contactez-moi</h2>
-        <h2 class="modal_name"></h2>
+        <h2 class="modal_name">  </h2>
         <img src="assets/icons/close.svg" onclick="closeModal()" alt="sortir du modal" />
       </header>
       <form onsubmit="return false">
@@ -80,13 +79,13 @@
     <div class="img">
 
     </div>
-    <button class="left"><i class="fa-solid fa-chevron-left"></i></button>
-    <button class="rigth"><i class="fa-solid fa-chevron-right"></i></button>
+    <button class="left"><em class="fa-solid fa-chevron-left"></em></button>
+    <button class="rigth"><em class="fa-solid fa-chevron-right"></em></button>
   </div>
 
   <!--price and like-->
   <div class="insert">
-    <p class="nmber_like">296081 </p><i class="fa-solid fa-heart"></i>
+    <p class="nmber_like">296081 </p><em class="fa-solid fa-heart"></em>
   </div>
   <!--Import script js-->
   <script src="/scripts/pages/photographer.js"></script>
