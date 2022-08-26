@@ -34,7 +34,7 @@ async function displayData2(return_data2) {
   const MediaSection = document.querySelector(".photograph-card");
 
   return_data2.forEach((media) => {
-    if (media.photographerId == url_id) {
+    if (Number(media.photographerId) === Number(url_id)) {
       const photographerMedia = MediaFactory(media);
       const userCardDOM = photographerMedia.getMediaPersonnel();
       MediaSection.appendChild(userCardDOM);
@@ -215,7 +215,7 @@ async function displayData(return_data) {
   const insert = document.querySelector(".insert");
   const modal_name = document.querySelector(".modal_name");
   return_data.forEach((photographer) => {
-    if (photographer.id == url_id) {
+    if (Number(photographer.id) === Number(url_id)) {
       const photographerModel = photographerFactory(photographer);
       const userCardDOM = photographerModel.getUserPersonnalDom();
       photographersSection.appendChild(userCardDOM);
