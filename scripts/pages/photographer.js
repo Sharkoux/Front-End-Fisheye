@@ -1,4 +1,3 @@
-/* eslint-disable eqeqeq */
 /* eslint-disable no-undef */
 /* eslint-disable camelcase */
 // Mettre le code JavaScript lié à la page photographer.html
@@ -51,12 +50,12 @@ async function AddLike() {
     // call all number like and addition
     const array = [Span_like[0].innerHTML];
 
-    for (a = 1; a < Span_like.length; a++) {
+    for (a = 1; a < Span_like.length; a += 1) {
       array.push(Span_like[a].innerHTML);
     }
     console.log(array);
     let sum = 0;
-    for (z = 0; z < array.length; z++) {
+    for (z = 0; z < array.length; z += 1) {
       sum += Number(array[z]);
     }
     console.log(sum);
@@ -67,16 +66,6 @@ async function AddLike() {
 
   // for  all heart click
   add_like.forEach((n) => {
-    n.addEventListener("click", NewLike, false);
-    n.addEventListener("keydown", KeyDown, false);
-    // and keydown (ENTER)
-    function KeyDown(e) {
-      const keyCode = e.keyCode ? e.keyCode : e.which;
-      if (keyCode === 13) {
-        NewLike(), false;
-      }
-    }
-
     // Number like + 1
     function NewLike() {
       const parent2 = n.parentNode;
@@ -86,10 +75,21 @@ async function AddLike() {
       parent2.childNodes[3].innerHTML = like_all + 1;
       // Impossible > +1
       n.removeEventListener("click", NewLike);
-      n.removeEventListener("keydown", KeyDown, false);
+      n.removeEventListener("keydown", KeyDown);
 
       alllike();
     }
+
+    // and keydown (ENTER)
+    function KeyDown(e) {
+      const keyCode = e.keyCode ? e.keyCode : e.which;
+      if (keyCode === 13) {
+        NewLike();
+      }
+    }
+
+    n.addEventListener("click", NewLike, false);
+    n.addEventListener("keydown", KeyDown, false);
   });
 
   alllike();
@@ -114,40 +114,30 @@ function SortChoice() {
   arrowup.style.setProperty("display", "flex", "important");
   arrowdown.style.display = "none";
 
-  // if "Popularité" choice, likes picture for order
-  choicePop.addEventListener("click", IfPopChoice);
-  choicePop.addEventListener("keydown", KeyDown, false);
-  // and keydown (ENTER)
-  function KeyDown(e) {
-    const keyCode = e.keyCode ? e.keyCode : e.which;
-    if (keyCode === 13) {
-      IfPopChoice(), false;
-    }
-  }
   async function IfPopChoice() {
     dropdown.style.display = "none";
     const order_Pop = [].slice
       .call(Card)
-      .sort((a, b) => a.childNodes[3].innerHTML - b.childNodes[3].innerHTML);
+      .sort((a, b) => a.childNodes[3].innerHTML - b.childNodes[3].innerHTML)
+      .reverse();
 
-    order_Pop.forEach((Card) => {
-      photograph_card.appendChild(Card);
+    order_Pop.forEach((Card2) => {
+      photograph_card.appendChild(Card2);
     });
     dropbtn.firstChild.replaceWith("Popularité");
     arrowup.style.setProperty("display", "none", "important");
     arrowdown.style.display = "flex";
   }
-
-  // if "Date" choice, Date for order
-  choiceDate.addEventListener("click", IfDateChoice);
-  choiceDate.addEventListener("keydown", KeyDown2, false);
   // and keydown (ENTER)
-  function KeyDown2(e) {
+  function KeyDown(e) {
     const keyCode = e.keyCode ? e.keyCode : e.which;
     if (keyCode === 13) {
-      IfDateChoice(), false;
+      IfPopChoice();
     }
   }
+  // if "Popularité" choice, likes picture for order
+  choicePop.addEventListener("click", IfPopChoice);
+  choicePop.addEventListener("keydown", KeyDown, false);
 
   async function IfDateChoice() {
     dropdown.style.display = "none";
@@ -168,16 +158,17 @@ function SortChoice() {
     arrowdown.style.display = "flex";
   }
 
-  // if "Title" choice, Title for order
-  choiceTitle.addEventListener("click", IfTitleChoice);
-  choiceTitle.addEventListener("keydown", KeyDown3, false);
   // and keydown (ENTER)
-  function KeyDown3(e) {
+  function KeyDown2(e) {
     const keyCode = e.keyCode ? e.keyCode : e.which;
     if (keyCode === 13) {
-      IfTitleChoice(), false;
+      IfDateChoice();
     }
   }
+
+  // if "Date" choice, Date for order
+  choiceDate.addEventListener("click", IfDateChoice);
+  choiceDate.addEventListener("keydown", KeyDown2, false);
 
   async function IfTitleChoice() {
     dropdown.style.display = "none";
@@ -196,7 +187,19 @@ function SortChoice() {
     arrowdown.style.display = "flex";
   }
 
-  dropbtn.addEventListener("dblclick", (e) => {
+  // and keydown (ENTER)
+  function KeyDown3(e) {
+    const keyCode = e.keyCode ? e.keyCode : e.which;
+    if (keyCode === 13) {
+      IfTitleChoice();
+    }
+  }
+
+  // if "Title" choice, Title for order
+  choiceTitle.addEventListener("click", IfTitleChoice);
+  choiceTitle.addEventListener("keydown", KeyDown3, false);
+
+  dropbtn.addEventListener("dblclick", () => {
     dropdown.style.display = "none";
   });
 
@@ -233,9 +236,6 @@ async function init() {
   displayData(return_data);
   const { return_data2 } = await getMedia();
   displayData2(return_data2);
-
-  const Card = document.querySelectorAll(".div_card_body");
-
   AddLike();
   ligthbox();
 }

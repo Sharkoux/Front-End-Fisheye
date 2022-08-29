@@ -15,14 +15,6 @@ function ligthbox() {
 
   // onclick lightbox visible
   lightSubmit.forEach((i) => {
-    i.addEventListener("click", OpenLightbox, false);
-    i.addEventListener("keydown", (e) => {
-      const keyCode = e.keyCode ? e.keyCode : e.which;
-      if (keyCode === 13) {
-        OpenLightbox();
-      }
-    });
-
     function OpenLightbox() {
       const card_body = document.querySelectorAll(".div_card_body");
       for (let e = 0; e < card_body.length; e += 1) {
@@ -58,32 +50,31 @@ function ligthbox() {
 
       // add array for order
       const array = [lightSubmit[0].getAttribute("data-order")];
-      // console.log(card_body[one].firstChild.firstChild.src.split('.')[4])
       for (let z = 0; z < lightSubmit.length; z += 1) {
         array.push(lightSubmit[z].getAttribute("data-order"));
       }
       console.log(array[0]);
 
-      const a = array.findIndex((el) => el == i.getAttribute("data-order"));
+      const a = array.findIndex((el) => el === i.getAttribute("data-order"));
 
-      let b = array[a];
+      let b = Number(array[a]);
       console.log(a);
       console.log(b);
 
       // button rigth for slide img
-      rigth.addEventListener("click", Rigth);
+
       async function Rigth() {
         if (b < card_body.length - 1) {
-          b++;
+          b += 1;
           console.log(b);
           // if img or mp4
-          if (card_body[b].firstChild.firstChild.src.split(".")[4] == "jpg") {
+          if (card_body[b].firstChild.firstChild.src.split(".")[4] === "jpg") {
             lighbox_img.removeChild(img_lightbox);
             img_lightbox = document.createElement("img");
             lighbox_img.appendChild(img_lightbox);
             lighbox_img.insertBefore(img_lightbox, p);
           }
-          if (card_body[b].firstChild.firstChild.src.split(".")[4] == "mp4") {
+          if (card_body[b].firstChild.firstChild.src.split(".")[4] === "mp4") {
             console.log("mp4");
             lighbox_img.removeChild(img_lightbox);
             img_lightbox = document.createElement("video");
@@ -102,14 +93,14 @@ function ligthbox() {
         } else {
           b = 0;
           // if img or mp4
-          if (card_body[b].firstChild.firstChild.src.split(".")[4] == "jpg") {
+          if (card_body[b].firstChild.firstChild.src.split(".")[4] === "jpg") {
             console.log("jpg");
             lighbox_img.removeChild(img_lightbox);
             img_lightbox = document.createElement("img");
             lighbox_img.append(img_lightbox);
             lighbox_img.insertBefore(img_lightbox, p);
           }
-          if (card_body[b].firstChild.firstChild.src.split(".")[4] == "mp4") {
+          if (card_body[b].firstChild.firstChild.src.split(".")[4] === "mp4") {
             console.log("mp4");
             lighbox_img.removeChild(img_lightbox);
             img_lightbox = document.createElement("video");
@@ -127,21 +118,20 @@ function ligthbox() {
         p.textContent =
           card_body[b].firstChild.parentElement.childNodes[2].textContent;
       }
-
+      rigth.addEventListener("click", Rigth);
       // button left for slide img
-      left.addEventListener("click", Left);
 
       async function Left() {
         if (b > 0) {
-          b--;
-          if (card_body[b].firstChild.firstChild.src.split(".")[4] == "jpg") {
+          b -= 1;
+          if (card_body[b].firstChild.firstChild.src.split(".")[4] === "jpg") {
             console.log("jpg");
             lighbox_img.removeChild(img_lightbox);
             img_lightbox = document.createElement("img");
             lighbox_img.append(img_lightbox);
             lighbox_img.insertBefore(img_lightbox, p);
           }
-          if (card_body[b].firstChild.firstChild.src.split(".")[4] == "mp4") {
+          if (card_body[b].firstChild.firstChild.src.split(".")[4] === "mp4") {
             console.log("mp4");
             lighbox_img.removeChild(img_lightbox);
             img_lightbox = document.createElement("video");
@@ -159,14 +149,14 @@ function ligthbox() {
             card_body[b].firstChild.parentElement.childNodes[2].textContent;
         } else {
           b = card_body.length - 1;
-          if (card_body[b].firstChild.firstChild.src.split(".")[4] == "jpg") {
+          if (card_body[b].firstChild.firstChild.src.split(".")[4] === "jpg") {
             console.log("jpg");
             lighbox_img.removeChild(img_lightbox);
             img_lightbox = document.createElement("img");
             lighbox_img.append(img_lightbox);
             lighbox_img.insertBefore(img_lightbox, p);
           }
-          if (card_body[b].firstChild.firstChild.src.split(".")[4] == "mp4") {
+          if (card_body[b].firstChild.firstChild.src.split(".")[4] === "mp4") {
             console.log("mp4");
             lighbox_img.removeChild(img_lightbox);
             img_lightbox = document.createElement("video");
@@ -184,36 +174,33 @@ function ligthbox() {
             card_body[b].firstChild.parentElement.childNodes[2].textContent;
         }
       }
+      left.addEventListener("click", Left);
+
       // rigth or left [KEY]
       document.addEventListener("keydown", (e) => {
         const keyCode = e.keyCode ? e.keyCode : e.which;
 
         if (
-          lightbox_display.getAttribute("aria-hidden") == "false" &&
+          lightbox_display.getAttribute("aria-hidden") === "false" &&
           keyCode === 39
         ) {
           Rigth();
         }
         if (
-          lightbox_display.getAttribute("aria-hidden") == "false" &&
+          lightbox_display.getAttribute("aria-hidden") === "false" &&
           keyCode === 37
         ) {
           Left();
         }
       });
     }
-  });
-
-  /* function close to ESC */
-  document.addEventListener("keydown", (e) => {
-    const keyCode = e.keyCode ? e.keyCode : e.which;
-
-    if (
-      lightbox_display.getAttribute("aria-hidden") == "false" &&
-      keyCode === 27
-    ) {
-      closeLightbox();
-    }
+    i.addEventListener("click", OpenLightbox, false);
+    i.addEventListener("keydown", (e) => {
+      const keyCode = e.keyCode ? e.keyCode : e.which;
+      if (keyCode === 13) {
+        OpenLightbox();
+      }
+    });
   });
 }
 
@@ -225,3 +212,15 @@ async function closeLightbox() {
   lighbox_img.removeChild(img_lightbox);
   lighbox_img.removeChild(p);
 }
+
+/* function close to ESC */
+document.addEventListener("keydown", (e) => {
+  const keyCode = e.keyCode ? e.keyCode : e.which;
+
+  if (
+    lightbox_display.getAttribute("aria-hidden") === "false" &&
+    keyCode === 27
+  ) {
+    closeLightbox();
+  }
+});

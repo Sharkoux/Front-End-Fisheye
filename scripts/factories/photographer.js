@@ -1,6 +1,7 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable camelcase */
 /* function factory photographe */
-// eslint-disable-next-line no-unused-vars
+
 function photographerFactory(data) {
   /* call const */
   const { name, portrait, id, city, country, tagline, price } = data;
