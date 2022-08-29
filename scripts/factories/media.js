@@ -15,7 +15,7 @@ function MediaFactory(data) {
     const card_body = document.createElement("a");
     card_body.setAttribute("class", "link_img");
     card_body.setAttribute("tabindex", "0");
-    card_body.setAttribute("alt", `Image: ${title}`);
+    card_body.setAttribute("alt", `${title}, closeup view`);
 
     const date_1 = document.createElement("em");
     date_1.textContent = date;
@@ -32,6 +32,7 @@ function MediaFactory(data) {
     const like = document.createElement("i");
     like.setAttribute("class", "fa-solid fa-heart like_0");
     like.setAttribute("tabindex", 0);
+    like.setAttribute("aria-label", "likes");
 
     let img = document.createElement("img");
     img.setAttribute("src", picture);
