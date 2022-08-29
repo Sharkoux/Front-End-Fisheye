@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 /* eslint-disable camelcase */
 // Mettre le code JavaScript lié à la page photographer.html
@@ -121,8 +122,8 @@ function SortChoice() {
       .sort((a, b) => a.childNodes[3].innerHTML - b.childNodes[3].innerHTML)
       .reverse();
 
-    order_Pop.forEach((Card2) => {
-      photograph_card.appendChild(Card2);
+    order_Pop.forEach((element) => {
+      photograph_card.appendChild(element);
     });
     dropbtn.firstChild.replaceWith("Popularité");
     arrowup.style.setProperty("display", "none", "important");
@@ -150,8 +151,8 @@ function SortChoice() {
           new Date(b.childNodes[1].innerHTML)
       );
 
-    order_Date.forEach((Card) => {
-      photograph_card.appendChild(Card);
+    order_Date.forEach((element) => {
+      photograph_card.appendChild(element);
     });
     dropbtn.firstChild.replaceWith("Date");
     arrowup.style.setProperty("display", "none", "important");
@@ -179,8 +180,8 @@ function SortChoice() {
         a.childNodes[2].innerHTML > b.childNodes[2].innerHTML ? 1 : -1
       );
 
-    order_Title.forEach((Card) => {
-      photograph_card.appendChild(Card);
+    order_Title.forEach((element) => {
+      photograph_card.appendChild(element);
     });
     dropbtn.firstChild.replaceWith("Titre");
     arrowup.style.setProperty("display", "none", "important");
