@@ -14,30 +14,30 @@
 <body>  
   <!--Header-->
   <header>
-    <a href="index.html" role="Image link" aria-label="Retour à la page d'accueil" autofocus>
-      <img src="assets/images/logo.png" class="logo" alt="Fisheye Home page" />
+    <a href="index.html" autofocus>
+      <img src="assets/images/logo.png" class="logo" alt="Retour vers la page d'accueil de Fisheye" />
     </a>
   </header>
   <!--Main-->
   <main id="main" aria-hidden="false">
     <!--Zone presentation photograph and button modal-->
-    <div class="photograph-header" aria-label="information photographe">
-      <button class="contact_button btn_center" onclick="displayModal()" aria-label="Contact Me">Contactez-moi</button>
+    <div class="photograph-header">
+      <button class="contact_button btn_center" onclick="displayModal()">Contactez-moi</button>
     </div>
     <div class="sort">
       <p>Trier par</p>
       <div class="dropdown">
-        <button onclick="SortChoice()" class="drop_btn" tabindex="0" aria-label="Order by" role="button" aria-haspopup="listbox" aria-expanded="true">Popularité<em class="fa-solid fa-angle-down angle-down"></em> <em class="fa-solid fa-angle-up angle-up"></em> </button>
+        <button onclick="SortChoice()" class="drop_btn" tabindex="0" aria-label="Order by" aria-haspopup="listbox" aria-expanded="true">Popularité<em class="fa-solid fa-angle-down angle-down"></em> <em class="fa-solid fa-angle-up angle-up"></em> </button>
         <div id="Dropdown" class="dropdown_body">
-          <a class="choicePop" tabindex="0" role="listbox" aria-activedescendant="" aria-label="Trier par Popularité">Popularité</a>
-          <a class="choiceDate" tabindex="0" aria-label="Trier par Date">Date</a>
-          <a class="choiceTitle" tabindex="0" aria-label="Trier par titre">Titre</a>
+          <a id="choicePop" tabindex="0" role="listbox" aria-label="Popularité">Popularité</a>
+          <a id="choiceDate" tabindex="0" role="listbox" aria-label="Date">Date</a>
+          <a id="choiceTitle" tabindex="0" role="listbox" aria-label="titre">Titre</a>
         </div>
       </div>
     </div>
     <!--Presentation image-->
-    <div class="body" aria-label="Zone présentation picture of photograph">
-      <div class="photograph-card" aria-label="Card containing photo and title of the photographer">
+    <div class="body" aria-description="Zone présentation picture of photograph">
+      <div class="photograph-card" aria-description="Card containing photo and title of the photographer">
 
       </div>
     </div>
@@ -46,35 +46,34 @@
   </main>
 
   <!--Modal-->
-  <div id="contact_modal" aria-hidden="true" role="dialog" aria-describedby="modal for contact photograph">
+  <div id="contact_modal" aria-hidden="true" role="dialog" aria-description="modal for contact photograph">
     <div class="modal" role="dialog">
       <header>
         <h2>Contactez-moi</h2>
-        <h2 class="modal_name">  </h2>
+        <h2 class="modal_name"> </h2>
         <img src="assets/icons/close.svg" onclick="closeModal()" alt="Close Contact Form" role="button" />
       </header>
       <form onsubmit="return false">
         <div>
           <label for="firstname">Prénom</label>
           <input id="firstname" type="text" name="firstname" aria-label="First Name"/>
-          <span class="error" aria-label="Message d'erreur: Veuillez entrer un prénom valide."></span>
+          <span class="error" aria-description="Message d'erreur: Veuillez entrer un prénom valide."></span>
           <label for="lastname">Nom</label>
           <input id="lastname" type="text" name="lastname" aria-label="Last Name" />
-          <span class="error" aria-label="Message d'erreur: Veuillez entrer un nom valide."></span>
+          <span class="error" aria-description="Message d'erreur: Veuillez entrer un nom valide."></span>
           <label for="email">Email</label>
           <input id="email" type="email" name="email" aria-label="Email" />
-          <span class="error" aria-label="Message d'erreur: Veuillez entrer une adresse mail valide."></span>
+          <span class="error" aria-description="Message d'erreur: Veuillez entrer une adresse mail valide."></span>
           <label for="message">Votre message</label>
           <input id="message" type="text" name="message" aria-label="Your message"/>
-          <span class="error"
-            aria-label="Message d'erreur: Veuillez entrer un message comprenant entre 2 et 150 caractères. "></span>
+          <span class="error" aria-description="Message d'erreur: Veuillez entrer un message comprenant entre 2 et 150 caractères. "></span>
         </div>
         <button class="contact_button submit" aria-label="Send">Envoyer</button>
       </form>
     </div>
   </div>
   <!--Lightbox-->
-  <div class="lightbox" role="dialog" aria-describedby="Lightbox slide picture">
+  <div class="lightbox" role="dialog" aria-description="Lightbox slide picture">
     <img class="lightbox_close" src="assets/icons/close.svg" onclick="closeLightbox()" alt="close dialog" role="button"/>
     <div class="img">
 

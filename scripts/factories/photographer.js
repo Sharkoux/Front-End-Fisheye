@@ -14,7 +14,7 @@ function photographerFactory(data) {
     link.setAttribute("href", `../photographer.html?${id}`);
     link.setAttribute(
       "aria-label",
-      `Direction la page de la photographe ${name}(nouvelle fenetre)`
+      `Direction la page du ou de la photographe ${name}`
     );
 
     const div_image = document.createElement("div");
@@ -27,10 +27,16 @@ function photographerFactory(data) {
     h2.textContent = name;
     const p1 = document.createElement("h3");
     p1.textContent = `${city}, ${country}`;
+    p1.setAttribute(
+      "aria-label",
+      `${name} est originaire de ${city}, à ${country}`
+    );
     const p2 = document.createElement("h4");
     p2.textContent = tagline;
+    p2.setAttribute("aria-label", `Son slogan est ${tagline}`);
     const p3 = document.createElement("p");
     p3.textContent = `${price}€/jour`;
+    p3.setAttribute("aria-description", `Son prix est de`);
 
     article.appendChild(link);
     link.appendChild(div_image);
@@ -43,6 +49,8 @@ function photographerFactory(data) {
   }
   /* function générate all element DOM for article photographer-header */
   function getUserPersonnalDom() {
+    const header = document.querySelector(".photograph-header");
+    header.setAttribute("aria-description", `de ${name}`);
     const span = document.createElement("span");
     const div = document.createElement("div");
     span.appendChild(div);
