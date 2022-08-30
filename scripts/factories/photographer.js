@@ -31,12 +31,15 @@ function photographerFactory(data) {
       "aria-label",
       `${name} est originaire de ${city}, à ${country}`
     );
+    p1.setAttribute("tabindex", "0");
     const p2 = document.createElement("h4");
     p2.textContent = tagline;
     p2.setAttribute("aria-label", `Son slogan est ${tagline}`);
+    p2.setAttribute("tabindex", "0");
     const p3 = document.createElement("p");
     p3.textContent = `${price}€/jour`;
     p3.setAttribute("aria-description", `Son prix est de`);
+    p3.setAttribute("tabindex", "0");
 
     article.appendChild(link);
     link.appendChild(div_image);
@@ -64,9 +67,13 @@ function photographerFactory(data) {
     first_name.textContent = name;
     const position = document.createElement("h2");
     position.textContent = `${city}, ${country}`;
-    position.setAttribute("aria-label", ``);
+    position.setAttribute(
+      "aria-label",
+      `${name} est originaire de ${city}, à ${country}, son prix est de ${price}€ par jour`
+    );
     const citation = document.createElement("p");
     citation.textContent = tagline;
+    citation.setAttribute("aria-description", `Son slogan est `);
     const img = document.createElement("img");
     img.setAttribute("src", picture);
     img.setAttribute("alt", `Photo de profil de ${name}`);

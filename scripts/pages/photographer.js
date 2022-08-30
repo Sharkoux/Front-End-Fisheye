@@ -70,10 +70,17 @@ async function AddLike() {
     // Number like + 1
     function NewLike() {
       const parent2 = n.parentNode;
+      const like_1 = document.querySelectorAll(".link_img");
 
       const like_all = Number(parent2.childNodes[3].innerHTML);
       console.log(n);
       parent2.childNodes[3].innerHTML = like_all + 1;
+
+      parent2.childNodes[3].setAttribute("aria-label", `${like_all + 1}`);
+      parent2.childNodes[0].setAttribute(
+        "aria-description",
+        `Afficher la photo nommée ${parent2.childNodes[2].textContent} ayant ${parent2.childNodes[3].textContent} like`
+      );
       // Impossible > +1
       n.removeEventListener("click", NewLike);
       n.removeEventListener("keydown", KeyDown);

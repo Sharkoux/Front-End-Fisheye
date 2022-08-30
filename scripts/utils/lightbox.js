@@ -24,7 +24,7 @@ function ligthbox() {
       }
 
       lightbox_display.style.display = "block";
-
+      lighbox_img.focus();
       // rule aria
       main.setAttribute("aria-hidden", "true");
       lightbox_display.setAttribute("aria-hidden", "false");
@@ -182,7 +182,7 @@ function ligthbox() {
         const keyCode = e.keyCode ? e.keyCode : e.which;
 
         if (
-          lightbox_display.getAttribute("aria-hidden") === "false" &&
+          String(lightbox_display.getAttribute("aria-hidden")) === "false" &&
           keyCode === 39
         ) {
           Rigth();

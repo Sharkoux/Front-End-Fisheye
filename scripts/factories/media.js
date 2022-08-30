@@ -12,10 +12,19 @@ function MediaFactory(data) {
   function getMediaPersonnel() {
     const div_one = document.createElement("div");
     div_one.setAttribute("class", "div_card_body");
+
+    const Nbr_Like = document.createElement("span");
+    Nbr_Like.setAttribute("class", "span_price");
+    Nbr_Like.textContent = likes;
+    // console.log(likes)
+
     const card_body = document.createElement("a");
     card_body.setAttribute("class", "link_img");
     card_body.setAttribute("tabindex", "0");
-    card_body.setAttribute("alt", `${title}, closeup view`);
+    card_body.setAttribute(
+      "aria-description",
+      `Afficher la photo nommée ${title} ayant ${Nbr_Like.textContent} like`
+    );
 
     const date_1 = document.createElement("em");
     date_1.textContent = date;
@@ -24,18 +33,14 @@ function MediaFactory(data) {
     const card_title = document.createElement("p");
     card_title.textContent = title;
 
-    const Nbr_Like = document.createElement("span");
-    Nbr_Like.setAttribute("class", "span_price");
-    Nbr_Like.textContent = likes;
-    // console.log(likes)
-
     const like = document.createElement("i");
     like.setAttribute("class", "fa-solid fa-heart like_0");
     like.setAttribute("tabindex", 0);
-    like.setAttribute("aria-label", "likes");
+    like.setAttribute("aria-label", "un like");
 
     let img = document.createElement("img");
     img.setAttribute("src", picture);
+    img.setAttribute("alt", `Photo nommée ${title}`);
 
     if (image === undefined) {
       console.log("error");

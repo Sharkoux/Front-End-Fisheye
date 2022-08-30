@@ -7,6 +7,7 @@ const error = document.querySelectorAll('span[class="error"');
 const modal = document.getElementById("contact_modal");
 const main = document.getElementById("main");
 const body = document.querySelector("body");
+const btncenter = document.querySelector(".btn_center");
 let valid = "";
 
 /* function open modal */
@@ -24,6 +25,7 @@ function closeModal() {
   modal.style.display = "none";
   modal.setAttribute("aria-hidden", "true");
   body.setAttribute("overflow", "");
+  btncenter.focus();
 }
 
 /* function close to ESC */
