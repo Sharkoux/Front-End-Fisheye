@@ -51,13 +51,20 @@ function photographerFactory(data) {
   function getUserPersonnalDom() {
     const header = document.querySelector(".photograph-header");
     header.setAttribute("aria-description", `de ${name}`);
+    const contactmodal = document.querySelector("#contact_modal");
+    contactmodal.setAttribute(
+      "aria-description",
+      `Modal pour contacter ${name}`
+    );
     const span = document.createElement("span");
+    span.setAttribute("tabindex", "0");
     const div = document.createElement("div");
     span.appendChild(div);
     const first_name = document.createElement("h1");
     first_name.textContent = name;
     const position = document.createElement("h2");
     position.textContent = `${city}, ${country}`;
+    position.setAttribute("aria-label", ``);
     const citation = document.createElement("p");
     citation.textContent = tagline;
     const img = document.createElement("img");
