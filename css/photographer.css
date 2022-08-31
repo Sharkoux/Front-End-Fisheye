@@ -87,7 +87,8 @@
     font-weight: 400;
     color: #901C1C;
     margin-top: 10px;
-    max-width: 350px;
+    max-width: 290px;
+    text-overflow: ellipsis;
 }
 
 .photograph-card i {
@@ -100,6 +101,9 @@
     left: 300px;
     cursor: pointer;
 }
+
+   
+
 
 /* zone sort */
 .sort {
