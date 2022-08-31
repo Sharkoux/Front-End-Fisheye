@@ -53,7 +53,7 @@ function photographerFactory(data) {
   /* function générate all element DOM for article photographer-header */
   function getUserPersonnalDom() {
     const header = document.querySelector(".photograph-header");
-    header.setAttribute("aria-description", `de ${name}`);
+    header.setAttribute("aria-label", `de ${name}`);
     const contactmodal = document.querySelector("#contact_modal");
     contactmodal.setAttribute(
       "aria-description",

@@ -36,7 +36,8 @@ function MediaFactory(data) {
     const like = document.createElement("i");
     like.setAttribute("class", "fa-solid fa-heart like_0");
     like.setAttribute("tabindex", 0);
-    like.setAttribute("aria-label", "un like");
+    like.setAttribute("aria-label", "like");
+    like.setAttribute("role", "link");
 
     let img = document.createElement("img");
     img.setAttribute("src", picture);

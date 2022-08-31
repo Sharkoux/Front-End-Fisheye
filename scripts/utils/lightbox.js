@@ -42,6 +42,10 @@ function ligthbox() {
       }
 
       img_lightbox.setAttribute("src", i.firstChild.src);
+      img_lightbox.setAttribute(
+        "aria-label",
+        "Vous êtes sur l'affichage de la photo"
+      );
       p.textContent = i.parentNode.childNodes[2].textContent;
 
       lighbox_img.appendChild(img_lightbox);
@@ -89,8 +93,13 @@ function ligthbox() {
             "src",
             card_body[b].firstChild.firstChild.src
           );
+          img_lightbox.setAttribute(
+            "aria-label",
+            "Vous êtes sur l'affichage de la photo"
+          );
           p.textContent =
             card_body[b].firstChild.parentElement.childNodes[2].textContent;
+          lighbox_img.focus();
         } else {
           b = 0;
           // if img or mp4
@@ -116,8 +125,13 @@ function ligthbox() {
           "src",
           card_body[b].firstChild.firstChild.src
         );
+        img_lightbox.setAttribute(
+          "aria-label",
+          "Vous êtes sur l'affichage de la photo"
+        );
         p.textContent =
           card_body[b].firstChild.parentElement.childNodes[2].textContent;
+        lighbox_img.focus();
       }
       rigth.addEventListener("click", Rigth);
       // button left for slide img
@@ -146,8 +160,13 @@ function ligthbox() {
             "src",
             card_body[b].firstChild.firstChild.src
           );
+          img_lightbox.setAttribute(
+            "aria-label",
+            "Vous êtes sur l'affichage de la photo"
+          );
           p.textContent =
             card_body[b].firstChild.parentElement.childNodes[2].textContent;
+          lighbox_img.focus();
         } else {
           b = card_body.length - 1;
           if (card_body[b].firstChild.firstChild.src.split(".")[4] === "jpg") {
@@ -171,8 +190,13 @@ function ligthbox() {
             "src",
             card_body[b].firstChild.firstChild.src
           );
+          img_lightbox.setAttribute(
+            "aria-label",
+            "Vous êtes sur l'affichage de la photo"
+          );
           p.textContent =
             card_body[b].firstChild.parentElement.childNodes[2].textContent;
+          lighbox_img.focus();
         }
       }
       left.addEventListener("click", Left);

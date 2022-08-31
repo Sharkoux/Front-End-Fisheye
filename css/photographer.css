@@ -27,6 +27,7 @@
     height: 200px;
     width: 200px;
     border-radius: 50%;
+    object-fit: cover;
 }
 
 .photograph-header h1 {
@@ -357,7 +358,11 @@ form input {
 .lightbox .img img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+}
+
+.lightbox p {
+    text-align: center;
 }
 
 
