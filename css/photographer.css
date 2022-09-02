@@ -15,7 +15,7 @@
     position: relative;
 }
 
-.photograph-header span {
+.photograph-header .div_header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -72,15 +72,20 @@
     cursor: pointer;
 }
 
+.photograph-card .div_like {
+    text-align: center;
+    align-items: baseline;
+    display: flex;
+    
+    max-width: 350px;
+}
+
 .photograph-card span {
     font-size: 24px;
     font-weight: 500;
     color: #901C1C;
-    position: relative;
-    bottom: 56px;
-    left: 290px;
-    width: 20px;
-    height: 20px;
+    
+  
 }
 
 .photograph-card p {
@@ -88,19 +93,19 @@
     font-weight: 400;
     color: #901C1C;
     margin-top: 10px;
-    max-width: 290px;
+    width: 100%;
+    text-align: left;
     text-overflow: ellipsis;
 }
 
 .photograph-card i {
+    padding-left: 5px;
     width: 20px;
-    height: 20px;
+    height: 22px;
     font-size: 22px;
     color: #901C1C;
-    position: relative;
-    bottom: 58px;
-    left: 300px;
     cursor: pointer;
+ 
 }
 
    
@@ -176,12 +181,17 @@
 
 
 .angle-up {
-    padding-left: 15px; 
+    
     display: none!important;
+    position: absolute;
+    left: 130px
+    
 }
 
 .angle-down {
-     padding-left: 15px;
+    position: absolute;
+    left: 130px
+
 }
 
 /* rules modal */

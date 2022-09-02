@@ -39,6 +39,9 @@ function MediaFactory(data) {
     like.setAttribute("aria-label", "like");
     like.setAttribute("role", "link");
 
+    const div_like = document.createElement("div");
+    div_like.setAttribute("class", "div_like");
+
     let img = document.createElement("img");
     img.setAttribute("src", picture);
     img.setAttribute("alt", `Photo nommée ${title}`);
@@ -54,9 +57,10 @@ function MediaFactory(data) {
     div_one.appendChild(card_body);
     card_body.appendChild(img);
     div_one.appendChild(date_1);
-    div_one.appendChild(card_title);
-    div_one.appendChild(Nbr_Like);
-    div_one.appendChild(like);
+    div_like.appendChild(card_title);
+    div_like.appendChild(Nbr_Like);
+    div_like.appendChild(like);
+    div_one.appendChild(div_like);
     console.log(div_one);
     return div_one;
   }

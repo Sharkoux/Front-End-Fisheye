@@ -59,8 +59,9 @@ function photographerFactory(data) {
       "aria-description",
       `Modal pour contacter ${name}`
     );
-    const span = document.createElement("span");
+    const span = document.createElement("div");
     span.setAttribute("tabindex", "0");
+    span.setAttribute("class", "div_header");
     const div = document.createElement("div");
     span.appendChild(div);
     const first_name = document.createElement("h1");
