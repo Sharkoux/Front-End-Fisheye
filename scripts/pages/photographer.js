@@ -70,16 +70,17 @@ async function AddLike() {
     // Number like + 1
     function NewLike() {
       const parent2 = n.parentNode;
+      console.log(parent2);
       const like_1 = document.querySelectorAll(".link_img");
 
-      const like_all = Number(parent2.childNodes[3].innerHTML);
+      const like_all = Number(parent2.childNodes[1].innerHTML);
       console.log(n);
-      parent2.childNodes[3].innerHTML = like_all + 1;
+      parent2.childNodes[1].innerHTML = like_all + 1;
 
-      parent2.childNodes[3].setAttribute("aria-label", `${like_all + 1}`);
+      parent2.childNodes[2].setAttribute("aria-label", `${like_all + 1}`);
       parent2.childNodes[0].setAttribute(
         "aria-description",
-        `Afficher la photo nommée ${parent2.childNodes[2].textContent} ayant ${parent2.childNodes[3].textContent} like`
+        `Afficher la photo nommée ${parent2.childNodes[2].textContent} ayant ${parent2.childNodes[1].textContent} like`
       );
       // Impossible > +1
       n.removeEventListener("click", NewLike);
@@ -126,7 +127,11 @@ function SortChoice() {
     dropdown.style.display = "none";
     const order_Pop = [].slice
       .call(Card)
-      .sort((a, b) => a.childNodes[3].innerHTML - b.childNodes[3].innerHTML)
+      .sort(
+        (a, b) =>
+          a.childNodes[2].childNodes[1].innerHTML -
+          b.childNodes[2].childNodes[1].innerHTML
+      )
       .reverse();
 
     order_Pop.forEach((element) => {

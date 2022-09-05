@@ -51,17 +51,18 @@ function ligthbox() {
       lighbox_img.appendChild(img_lightbox);
       lighbox_img.appendChild(p);
 
-      // find index to first picture onclick
+
 
       // add array for order
       const array = [lightSubmit[0].getAttribute("data-order")];
       for (let z = 0; z < lightSubmit.length; z += 1) {
         array.push(lightSubmit[z].getAttribute("data-order"));
       }
-      console.log(array[0]);
-
+      console.log(array);
+     
+      // find index to first picture onclick
       const a = array.findIndex((el) => el === i.getAttribute("data-order"));
-
+      
       let b = Number(array[a]);
       console.log(a);
       console.log(b);
